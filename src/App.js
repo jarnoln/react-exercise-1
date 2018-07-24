@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import logo from './logo.svg';
 import './App.css';
+import './UserOutput/UserOutput.css';
 import UserOutput from './UserOutput/UserOutput.js';
 import UserInput from './UserInput/UserInput.js';
 
@@ -24,9 +25,12 @@ class App extends Component {
   render() {
     return (
       <div className="App">
-        <UserOutput username={this.state.users[0].username}> </UserOutput>
-        <UserOutput username={this.state.users[1].username}> </UserOutput>
-        <UserInput changed={this.usernameChangedHandler} username={this.state.users[0].username} />
+        <UserOutput className='userOutput' username={this.state.users[0].username}> </UserOutput>
+        <UserOutput className='userOutput' username={this.state.users[1].username}> </UserOutput>
+        <UserInput
+          className='userInput'
+          changed={this.usernameChangedHandler}
+          username={this.state.users[0].username} />
       </div>
     );
   }
